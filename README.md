@@ -1,5 +1,7 @@
 # Political-Map-Webpage
 
+[WebApp Link](https://w-cow-103.github.io/Political-Map-Webpage/)
+
 ### Summary
 
 The goal for this project is to create a webapp similar to *The Council for Foreign Relations's* [Global Conflict Tracker](https://www.cfr.org/global-conflict-tracker). 
@@ -9,7 +11,7 @@ However, instead of being focused on current international conflicts, this webap
 
 Mostly in order - This list does contain long term goals and aspirations as well. 
 
- - Publish the website
+ - Publish the website 
    - Short Term: Gitlab Pages or Heroku as a quick solution
    - Long Term: Investigate more options and weight them against the status quo
  -  Using Mapbox, create a world map that looks how I want
