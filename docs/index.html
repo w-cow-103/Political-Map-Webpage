@@ -57,18 +57,20 @@
 
     #features {
         top: 0;
-        height: 100px;
+        height: 70px;
         margin-top: 20px;
-        width: 250px;
+        width: 240px;
+        background: #b1b1b1;
     }
 
     #legend {
         padding: 10px;
         box-shadow: 0 1px 2px rgba(0 0 0 0.1);
         line-height: 18px;
-        height: 150px;
+        height: 255px;
         margin-bottom: 40px;
         width: 100px;
+        background: #b1b1b1;
     }
 
     .legend-key {
@@ -90,8 +92,8 @@
     <!-- Divs -->
     <div id="map"></div>
     <div class="map-overlay" id="features">
-      <h2>US population density</h2>
-      <div id="pd"><p>Hover over a state!</p></div>
+      <h2>Democracy Index Value:</h2>
+      <div id="democracyIndex"><p>Hover over a country!</p></div>
     </div>
     <div class="map-overlay" id="legend"></div>
 
@@ -103,7 +105,9 @@
         // create map
         const map = new mapboxgl.Map({
           container: 'map', // container id
-          style: 'mapbox://styles/wcowden103/clued5u1v00gj01ql3oq0gmun' // map style URL from Mapbox Studio
+          style: 'mapbox://styles/wcowden103/clugeapn400v401pdabwj924c', // map style URL from Mapbox Studio
+          center: [17.748781, 28.329027],
+          zoom: 4
         });
   
         // wait for map to load before adjusting it
@@ -111,32 +115,50 @@
           // make a pointer cursor
           map.getCanvas().style.cursor = 'default';
   
-          // set map bounds to the continental US
+          // set map bounds to zoomed out full map
           map.fitBounds([
-            [-133.2421875, 16.972741],
-            [-47.63671875, 52.696361]
+            [-141.532427, 70.777869],
+            [179.611407, -47.236821]
           ]);
+
+          // map.center([-45.96, 30.47]);
+          // map.zoom(0);
   
+          //map.center([17.748781, 30.329027]);
+          // map.zoom(2);
+
           // define layer names
           const layers = [
-            '0-10',
-            '10-20',
-            '20-50',
-            '50-100',
-            '100-200',
-            '200-500',
-            '500-1000',
-            '1000+'
+            '0-1',
+            '1-2',
+            '2-3',
+            '3-4',
+            '4-4.5',
+            '4.5-5',
+            '5.5-6',
+            '6-6.5',
+            '6.5-7',
+            '7-7.5',
+            '7.5-8',
+            '8-8.5',
+            '8.5-9',
+            '9-10'
           ];
           const colors = [
-            '#FFEDA0',
-            '#FED976',
-            '#FEB24C',
-            '#FD8D3C',
-            '#FC4E2A',
-            '#E31A1C',
-            '#BD0026',
-            '#800026'
+            '#410101',
+            '#eb6f44',
+            '#f6ad62',
+            '#fee08e',
+            '#fee08e',
+            '#fbf6c0',
+            '#fbf6c0',
+            '#e1f1f5',
+            '#d3e9ee',
+            '#a5d6e4',
+            '#8cccde',
+            '#6ba7c7',
+            '#4f98bf',
+            '#4276b1'
           ];
   
           // create legend
@@ -159,31 +181,31 @@
           // change info window on hover
           map.on('mousemove', (event) => {
             const states = map.queryRenderedFeatures(event.point, {
-              layers: ['statedata-23glos']
+              layers: ['countries-map-cowden']
             });
-            document.getElementById('pd').innerHTML = states.length
-              ? `<h3>${states[0].properties.name}</h3><p><strong><em>${states[0].properties.density}</strong> people per square mile</em></p>`
-              : `<p>Hover over a state!</p>`;
+            document.getElementById('democracyIndex').innerHTML = states.length
+              ? `<p>${states[0].properties.name}: ${states[0].properties.democracyScore}</p>`
+              : `<p>Hover over a country!</p>`;
           });
         });
 
 
-        map.on('click', (event) => {
-        const features = map.queryRenderedFeatures(event.point, {
-          layers: ['chicago-parks-d33tv0']
-        });
-        if (!features.length) {
-          return;
-        }
-        const feature = features[0];
+      //   map.on('click', (event) => {
+      //   const features = map.queryRenderedFeatures(event.point, {
+      //     layers: ['chicago-parks-d33tv0']
+      //   });
+      //   if (!features.length) {
+      //     return;
+      //   }
+      //   const feature = features[0];
 
-        const popup = new mapboxgl.Popup({ offset: [0, -15] })
-          .setLngLat(feature.geometry.coordinates)
-          .setHTML(
-            `<h3>${feature.properties.title}</h3><p>${feature.properties.description}</p>`
-          )
-          .addTo(map);
-      });
+      //   const popup = new mapboxgl.Popup({ offset: [0, -15] })
+      //     .setLngLat(feature.geometry.coordinates)
+      //     .setHTML(
+      //       `<h3>${feature.properties.title}</h3><p>${feature.properties.description}</p>`
+      //     )
+      //     .addTo(map);
+      // });
 
       </script>
 

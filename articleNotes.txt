@@ -4,13 +4,20 @@
  
     - The Economist's democracy index
     - Political system
-        - 
+        - Constutional Republic
+        - Monarchy 
+    - Political parties
+        - 1 party (China)
+        - *mostly* 1 party (Japan)
+        - 2 party (USA)
+        - 2 party plus (Canada, UK)
+        - Multi-party (Germany, Israel)
 
 ## Country ideas
 
-    - Ireland : 2 center-right parties, finna fael and fine gael
-    - Canada  : Left wing nationalism with duoliguism creating a pseudo-class system
-    - Tunisia : Did well during the arab spring
-    - New Zealand : 
-    - Mexico  : Upcoming election
-
+    - Ireland       : 2 center-right parties, finna fael and fine gael
+    - Canada        : Left wing nationalism with duoliguism creating a pseudo-class system
+    - Tunisia       : Did well during the arab spring
+    - New Zealand   : Winston Peters being deputy PM for both main parties in a strange 2 party plus
+    - Mexico        : Upcoming election
+    - Israel        : 13 Parties in Kennest with having no written Constution
