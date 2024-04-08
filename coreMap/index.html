@@ -179,18 +179,18 @@
 
       // #58614e
 
-      function visitPage(){
-          window.location='../countries/UnitedKingdom.html';
-        }
-
       map.on('click', (event) => {
         const features = map.queryRenderedFeatures(event.point, {
-          layers: ['countryinformation']
+          layers: ['countryInformation']
         });
         if (!features.length) {
           return;
         }
-        visitPage();
+        window.location='../countries/UnitedKingdom.html';
+
+        // TODO - Update geojson to include the url property that can be easily grabbed for webpage hopping
+        //window.location='../countries/${feature.properties.url}.html';
+
         // const feature = features[0];
 
         // const popup = new mapboxgl.Popup({ offset: [0, -15] })
