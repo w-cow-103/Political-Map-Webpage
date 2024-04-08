@@ -13,32 +13,27 @@
     <!-- Styles -->
     <style>
     body {
-        margin: 0;
-        padding: 0;
+      margin: 0;
+      padding: 0;
     }
 
-    h2,
-    h3 {
-        margin: 10px;
-        font-size: 18px;
-    }
-
-    h3 {
-        font-size: 16px;
+    h2, h3 {
+      margin: 10px;
+      font-size: 18px;
     }
 
     p {
-        margin: 10px;
+      margin: 10px;
     }
 
     /**
     * Create a position for the map
     * on the page */
     #map {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        width: 100%;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 100%;
     }
 
     /**
@@ -46,40 +41,40 @@
     * (information box and legend) will be displayed
     * on the page. */
     .map-overlay {
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        background: #fff;
-        margin-right: 20px;
-        font-family: Arial, sans-serif;
-        overflow: auto;
-        border-radius: 3px;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      background: #fff;
+      margin-right: 20px;
+      font-family: Arial, sans-serif;
+      overflow: auto;
+      border-radius: 3px;
     }
 
     #features {
-        top: 0;
-        height: 70px;
-        margin-top: 20px;
-        width: 240px;
-        background: #b1b1b1;
+      top: 0;
+      height: 70px;
+      margin-top: 20px;
+      width: 240px;
+      background: #b1b1b1;
     }
 
     #legend {
-        padding: 10px;
-        box-shadow: 0 1px 2px rgba(0 0 0 0.1);
-        line-height: 18px;
-        height: 255px;
-        margin-bottom: 40px;
-        width: 100px;
-        background: #b1b1b1;
+      padding: 10px;
+      box-shadow: 0 1px 2px rgba(0 0 0 0.1);
+      line-height: 18px;
+      height: 255px;
+      margin-bottom: 40px;
+      width: 100px;
+      background: #b1b1b1;
     }
 
     .legend-key {
-        display: inline-block;
-        border-radius: 20%;
-        width: 10px;
-        height: 10px;
-        margin-right: 5px;
+      display: inline-block;
+      border-radius: 20%;
+      width: 10px;
+      height: 10px;
+      margin-right: 5px;
     }
     </style>
 </head>
@@ -182,23 +177,29 @@
           : `<p>Hover over a country!</p>`;
       }); // end mousemove event
 
+      // #58614e
 
-      // map.on('click', (event) => {
-      // const features = map.queryRenderedFeatures(event.point, {
-      //   layers: ['chicago-parks-d33tv0']
-      // });
-      // if (!features.length) {
-      //   return;
-      // }
-      // const feature = features[0];
+      function visitPage(){
+          window.location='../countries/UnitedKingdom.html';
+        }
 
-      // const popup = new mapboxgl.Popup({ offset: [0, -15] })
-      //   .setLngLat(feature.geometry.coordinates)
-      //   .setHTML(
-      //     `<h3>${feature.properties.title}</h3><p>${feature.properties.description}</p>`
-      //   )
-      //   .addTo(map);
-      // }); // end mousemove event
+      map.on('click', (event) => {
+        const features = map.queryRenderedFeatures(event.point, {
+          layers: ['countryinformation']
+        });
+        if (!features.length) {
+          return;
+        }
+        visitPage();
+        // const feature = features[0];
+
+        // const popup = new mapboxgl.Popup({ offset: [0, -15] })
+        //   .setLngLat(feature.geometry.coordinates)
+        //   .setHTML(
+        //     `<h3>${feature.properties.title}</h3><p>${feature.properties.description}</p>`
+        //   )
+        //   .addTo(map);
+      }); // end mousemove event
 
     }); // end map
   </script>

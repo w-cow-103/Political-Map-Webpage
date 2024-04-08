@@ -8,6 +8,11 @@ import static java.lang.Integer.*;
 import static java.lang.Double.*;
 import static java.lang.Math.*;
 
+/*
+ * This script takes converts the full file into 1-line
+ * 
+ */
+
 public class oneLine
 {
 	public void run() throws Exception
@@ -19,16 +24,6 @@ public class oneLine
         while (file.hasNextLine())
         {
             currLine = file.nextLine();
-
-            if (!currLine.contains("]"))
-            {
-                // do nothing
-                //System.out.println(currLine);
-            }
-            else
-            {
-                //file2.write("\n");
-            }
             file2.write(currLine);
         }
 
