@@ -1,5 +1,6 @@
 body {
-	background-color: #424242;
+	/* This was #424242 */
+	background-color: #e7e7e7;
 	min-width: 960px;
 	/* min-width: 1000px;
 	width: 100%;
@@ -127,7 +128,7 @@ img {
 /*------------ HEADER ------------*/
 #header {
 	background: #4e5944 url(../images/bg-header.jpg) repeat-x left bottom;
-	padding: 40px 0 46px;
+	padding: 20px 0 26px;
 }
 /** logo **/
 .logo {
